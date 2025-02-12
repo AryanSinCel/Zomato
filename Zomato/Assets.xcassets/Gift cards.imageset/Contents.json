@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "flat-banner-with-red-gift-card-on-white-background-flyer-design-brochure-background-png.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

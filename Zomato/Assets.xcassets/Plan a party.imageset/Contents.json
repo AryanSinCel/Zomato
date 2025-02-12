@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "fast-food-and-drink-3d-icon-download-in-png-blend-fbx-gltf-file-formats--pizza-cold-burger-pack-icons-7785996-2.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

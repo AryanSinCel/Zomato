@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "yummy-fried-chicken-cartoon-illustrations-and-clipart-of-tasty-fast-food-meal-generative-ai-png.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
