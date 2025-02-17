@@ -28,6 +28,8 @@ Features
 *   **Profile Update** : User can update the profile.
 
 *   **Veg Mode** : User can toggle between veg mode.
+
+*   **Country Selection** : User can select coountry based on the country dial code will appear.
     
 
 Technologies Used
