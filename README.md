@@ -1,4 +1,5 @@
-https://drive.google.com/file/d/1H-xmxCcZ8IzwSdtBWQHcSqevwAMJNpzb/view?usp=sharing
+![Simulator Screen Recording - iPhone 16 Pro - 2025-02-17 at 17 06 33-min](https://github.com/user-attachments/assets/c0fb9825-f0a2-4e3b-942a-c1d6aed3eb1a)
+
 
 Zomato App
 ==========
