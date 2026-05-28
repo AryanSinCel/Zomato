@@ -10,92 +10,56 @@ import SwiftUI
 //MARK: Filter View
 
 struct FilterView: View {
+    let filters: [FilterItem]
+    
     var body: some View {
-        ScrollView(.horizontal,showsIndicators: false){
-            HStack(spacing:0){
-                    Button{
-                        //
-                    }label: {
-                        Image(systemName: "slider.horizontal.3")
-                        Text("Sort")
-//                            .font(.title3)
-                            .fontWeight(.medium)
-                        Image(systemName: "chevron.down")
-                    }
-                    .padding(5)
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 6)
-                                .stroke(.divider, lineWidth: 1)
-                        )
-                    .frame(width: 110,height: 40)
-                    .cornerRadius(10)
-                    
+           ScrollView(.horizontal, showsIndicators: false) {
+               HStack(spacing: 8) {
+                   ForEach(filters) { filter in
+                       Button(action: filter.action) {
+                           HStack(spacing: 4) {
+                               if let systemImage = filter.systemImage {
+                                   Image(systemName: systemImage)
+                               }
+                               
+                               if let assetImage = filter.assetImage {
+                                   Image(assetImage)
+                                       .resizable()
+                                       .scaledToFit()
+                                       .frame(width: 20, height: 20)
+                               }
 
-                Button{
-                    //
-                }label: {
-                    Text("Rating 4.0+")
-                        .fontWeight(.medium)
-                }
-                .padding(5)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(.divider, lineWidth: 1)
-                    )
-                    .frame(width: 110,height: 40)
-                    .cornerRadius(10)
-                
-                Button{
-                    //
-                }label: {
-                    Text("Pure Veg")
-                        .fontWeight(.medium)
-                }
-                .padding(5)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(.divider, lineWidth: 1)
-                    )
-                    .frame(width: 90,height: 40)
-                    .cornerRadius(10)
-                
-                Button{
-                    //
-                }label: {
-                    Text("Gourmet")
-                        .fontWeight(.medium)
-                }
-                .padding(5)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(.divider, lineWidth: 1)
-                    )
-                    .frame(width: 90,height: 40)
-                    .cornerRadius(10)
-                
-                Button{
-                    //
-                }label: {
-                    Text("Cuisines")
-                        .fontWeight(.medium)
-                    Image(systemName: "chevron.down")
-                }
-                .padding(5)
-                .overlay(
-                        RoundedRectangle(cornerRadius: 6)
-                            .stroke(.divider, lineWidth: 1)
-                    )
-                    .frame(width: 110,height: 40)
-                    .cornerRadius(10)
-            }
-            .tint(.black)
-            .padding()
+                               Text(filter.title)
+                                   .fontWeight(.medium)
 
-            
-        }
+                               if filter.showsChevron {
+                                   Image(systemName: "chevron.down")
+                                       .font(.caption)
+                               }
+                           }
+                           .padding(.horizontal, 12)
+                           .frame(height: 40)
+                           .overlay(
+                               RoundedRectangle(cornerRadius: 8)
+                                   .stroke(.divider, lineWidth: 1)
+                           )
+                       }
+                       .tint(.black)
+                   }
+               }
+               .padding(.horizontal)
+               .padding(.vertical, 8)
+           }
     }
 }
 
 #Preview {
-    FilterView()
+    FilterView(filters: [FilterItem(title: "Sort",
+                                   systemImage: "slider.horizontal.3",
+                                   showsChevron: true),
+                        FilterItem(title: "Rating 4.0+"),
+                        FilterItem(title: "Pure Veg"),
+                        FilterItem(title: "Gourmet"),
+                         FilterItem(title: "Gold offers", assetImage: "goldIcon")
+    ])
 }

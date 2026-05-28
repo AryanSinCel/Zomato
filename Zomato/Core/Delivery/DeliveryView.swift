@@ -76,7 +76,21 @@ struct DeliveryView: View {
                 .foregroundStyle(Color.gray)
                 
                 //MARK: Showing Filter View
-                FilterView()
+                FilterView(filters: [FilterItem(title: "Filters",
+                                                systemImage: "slider.horizontal.3",
+                                                showsChevron: true),
+                                     FilterItem(title: "Near & Fast", systemImage: "bolt"),
+                                     FilterItem(title: "No packaging charges"),
+                                     FilterItem(title: "Loved by friends", systemImage: "heart.fill"),
+                                     FilterItem(title: "New to you"),
+                                     FilterItem(title: "Great offers"),
+                                     FilterItem(title: "Under ₹200"),
+                                     FilterItem(title: "Rating 4.0+"),
+                                     FilterItem(title: "Previously ordered"),
+                                     FilterItem(title: "Gold offers", assetImage: "goldIcon"),
+                                     FilterItem(title: "Pure vegs"),
+                                     FilterItem(title: "Schedule")
+                ])
                 
                 Text("1991 restaurants delivering to you")
                     .foregroundStyle(Color.gray)

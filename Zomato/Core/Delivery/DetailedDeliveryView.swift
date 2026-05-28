@@ -81,8 +81,18 @@ struct DetailedDeliveryView: View {
                         
                     }
 
-                    //MARK: Showing Filter View
-                    FilterView()
+                //MARK: Showing Filter View
+                FilterView(filters: [FilterItem(title: "Filters",
+                                                systemImage: "slider.horizontal.3",
+                                                showsChevron: true),
+                                     FilterItem(title: "Veg"),
+                                     FilterItem(title: "Non-veg"),
+                                     FilterItem(title: "Highly reordered"),
+                                     FilterItem(title: "Spicy"),
+                                     FilterItem(title: "Items @15% OFF", assetImage: "offer"),
+                                     FilterItem(title: "Items @20% OFF", assetImage: "offer"),
+                                     FilterItem(title: "Items @30% OFF", assetImage: "offer"),
+                ])
                 
                 //MARK: Showing Recommendation View
                 RecommendationView(cartViewModel: viewModel, dishes: restuarant.dishes, restuarant: restuarant)

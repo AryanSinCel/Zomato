@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PopularRestaurantAroundYou: View {
+    let restuarant: Restaurant
     var body: some View {
             ZStack(alignment:.bottom){
                 ImageCarouselView()
@@ -19,7 +20,7 @@ struct PopularRestaurantAroundYou: View {
                     VStack(alignment:.leading, spacing: 0){
                         VStack(alignment:.leading){
                             Text("PRE-BOOK TABLE ─────")
-                            Text("Flat 30% OFF + 3 more")
+                            Text("Flat \(restuarant.discount)% OFF + 3 more")
                                 .font(.title2)
                                 .fontWeight(.semibold)
                         }
@@ -29,11 +30,11 @@ struct PopularRestaurantAroundYou: View {
                        
                         VStack{
                             HStack{
-                                Text("Noida Social")
+                                Text(restuarant.name)
                                     .font(.title)
                                     .bold()
                                 Spacer()
-                                Text("4.5")
+                                Text(restuarant.rating)
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                 Image(systemName: "star.fill")
@@ -42,16 +43,16 @@ struct PopularRestaurantAroundYou: View {
                                     .cornerRadius(10)
                             }
                             HStack{
-                                Text("DLF Mall of India, Sector 18, Noida")
+                                Text(restuarant.location)
                                 Spacer()
-                                Text("4.5 km")
+                                Text("\(restuarant.distance) km")
                             }
                             .foregroundStyle(Color.gray)
                             
                             HStack{
-                                Text("North Indian • Chinese")
+                                Text("\(restuarant.foodType) • \(restuarant.foodBelong)")
                                 Spacer()
-                                Text("₹1500 for two")
+                                Text("₹\(restuarant.priceForOne) for one")
                             }
                             .foregroundStyle(Color.gray)
                         }
@@ -73,5 +74,5 @@ struct PopularRestaurantAroundYou: View {
 }
 
 #Preview {
-    PopularRestaurantAroundYou()
+    PopularRestaurantAroundYou(restuarant: StaticData.restaurants.first!)
 }

@@ -27,7 +27,20 @@ struct DiningView: View {
                 }
                 
                 // Filters and Content
-                FilterView()
+                FilterView(filters: [FilterItem(title: "Filters",
+                                                systemImage: "slider.horizontal.3",
+                                                showsChevron: true),
+                                     FilterItem(title: "Carnival offers"),
+                                     FilterItem(title: "Offers", systemImage: "coupon"),
+                                     FilterItem(title: "Near & Top Rated"),
+                                     FilterItem(title: "Rating 4.5+"),
+                                     FilterItem(title: "Veg-only"),
+                                     FilterItem(title: "Pet Friendly"),
+                                     FilterItem(title: "Outdoor Seating"),
+                                     FilterItem(title: "Serves Alcohol"),
+                                     FilterItem(title: "Open Now"),
+                                     FilterItem(title: "Cafes")
+                ])
                 
                 HStack {
                     Rectangle()
@@ -79,9 +92,9 @@ struct DiningView: View {
                 .padding()
                 
                 VStack{
-                    ForEach(0..<5,id: \.self){item in
+                    ForEach(StaticData.restaurants){item in
                         //MARK: Popular Restaurant
-                        PopularRestaurantAroundYou()
+                        PopularRestaurantAroundYou(restuarant: item)
                     }
                 }
                 
